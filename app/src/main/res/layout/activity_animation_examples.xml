@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:id="@+id/relative_button" android:layout_width="match_parent" android:layout_height="wrap_content"
+       >
+
+            <Button
+                    android:id="@+id/btnScale" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="scale Animation"/>
+
+
+            <Button
+                    android:id="@+id/btnFadein" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Fade In Animation"
+                    android:layout_below="@+id/btnScale"/>
+
+            <Button
+                    android:id="@+id/btnFadeOut" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Fade Out Animation"
+                    android:layout_below="@+id/btnFadein"/>
+
+
+            <Button
+                    android:id="@+id/btnBlink" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Blink Animation"
+                    android:layout_below="@+id/btnFadeOut"/>
+
+            <Button
+                    android:id="@+id/btnZoomIn" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Zoom in Animation"
+                    android:layout_below="@+id/btnBlink"/>
+
+            <Button
+                    android:id="@+id/btnZoomOut" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Zoom out Animation"
+                    android:layout_below="@+id/btnZoomIn"/>
+
+            <Button
+                    android:id="@+id/btnRotate" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Rotate Animation"
+                    android:layout_below="@+id/btnZoomOut"/>
+
+
+            <Button
+                    android:id="@+id/btnMove" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Move Animation"
+                    android:layout_below="@+id/btnRotate"/>
+            <Button
+                    android:id="@+id/btnSlideUp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Slide up Animation"
+                    android:layout_below="@+id/btnMove"/>
+            <Button
+                    android:id="@+id/btnSlideDown" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Slide Down Animation"
+                    android:layout_below="@+id/btnSlideUp"/>
+
+            <Button
+                    android:id="@+id/btnBounce" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Bounce Animation"
+                    android:layout_below="@+id/btnSlideDown"/>
+
+            <TextView
+                    android:id="@+id/tvAnim"
+                    android:layout_toRightOf="@+id/btnZoomOut"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Animation Text"
+                    android:textSize="30sp"
+                    android:layout_marginBottom="5dp"/>
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+</ScrollView>

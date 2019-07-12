@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+
+        <Button
+                android:id="@+id/btnTicTacToe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tic Tac Toe"
+                android:layout_margin="5dp"/>
+        <Button
+                android:id="@+id/btnViewPager2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ViewPager2"
+                android:layout_margin="5dp"/>
+
+        <Button
+                android:id="@+id/btnAnimation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animation Example"
+                android:layout_margin="5dp"/>
+
+        <Button
+                android:id="@+id/btnRXJava"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RXJava"/>
+
+        <Button
+                android:id="@+id/btnContentProvider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Content Provider"/>
+
+
+        <Button
+                android:id="@+id/btnService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service "/>
+
+
+        <Button
+                android:id="@+id/btnArrayList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ArrayList "/>
+
+        <Button
+                android:id="@+id/btnMultiThreading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Multithreading "/>
+
+        <Button
+                android:id="@+id/btnSensors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sensors "/>
+
+        <Button
+                android:id="@+id/btnRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room "/>
+
+        <Button
+                android:id="@+id/btnLaunchMode" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Launch modes"/>
+        <Button
+                android:id="@+id/btnPendingIntent" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Pending intent"/>
+
+        <Button
+                android:id="@+id/btnTwitter" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Twitter"/>
+
+        <Button
+                android:id="@+id/btnJavaCoding" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Java coding examples"/>
+
+        <Button
+                android:id="@+id/btnCameraPreview" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Camera Preview"/>
+
+
+
+    </LinearLayout>
+</ScrollView>

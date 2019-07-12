@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<MotionScene
+        xmlns:motion="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <Transition
+
+
+            motion:constraintSetStart="@layout/activity_main"
+            motion:constraintSetEnd="@layout/activity_main_end"
+            motion:duration="1000">
+
+        <!--motion:motionInterpolator="bounce"-->
+
+        <!-- motion:constraintSetStart="@+id/start"
+         motion:constraintSetEnd="@+id/end"-->
+
+        <!-- motion:constraintSetStart="@layout/activity_main"
+         motion:constraintSetEnd="@layout/activity_main_end"-->
+
+        <!--<KeyFrameSet>
+            <KeyPosition
+
+                    motion:keyPositionType="parentRelative"
+                         motion:percentY="0.25"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/motionLayoutAnimationButton"
+            />
+
+
+        </KeyFrameSet>-->
+
+
+       <!-- <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentY="0.25"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/reset_button"
+            />
+
+        </KeyFrameSet>-->
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentX="0.50"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_00"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentX="0.90"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_01"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentY="0.50"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_02"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentY="0.25"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_10"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:sizePercent="0.5" motion:keyPositionType="parentRelative"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_11"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentY="0.90"
+                         motion:framePosition="50"
+
+                         motion:motionTarget="@+id/button_12"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentY="0.50"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_20"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentX="0.10"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_21"
+            />
+
+        </KeyFrameSet>
+        <KeyFrameSet>
+            <KeyPosition motion:keyPositionType="parentRelative"
+                         motion:percentX="0.50"
+                         motion:framePosition="50"
+                         motion:motionTarget="@+id/button_22"
+            />
+
+        </KeyFrameSet>
+
+        <KeyFrameSet>
+
+        </KeyFrameSet>
+
+
+        <!--to animate the layout-->
+       <!-- <OnClick
+                motion:clickAction="toggle"
+                motion:targetId="@+id/motionLayoutAnimationButton"/>-->
+    </Transition>
+
+    <!-- <ConstraintSet android:id="@+id/start">
+
+         <Constraint
+                 android:text="Motion Layout"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/motionLayoutAnimationButton" app:layout_constraintEnd_toStartOf="@+id/reset_button"
+                 android:layout_marginEnd="16dp" app:layout_constraintBaseline_toBaselineOf="@+id/reset_button">
+
+             <CustomAttribute motion:attributeName="backgroundColor"
+             motion:customColorValue="@color/colorPrimary"></CustomAttribute>
+         </Constraint>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 android:id="@+id/button_00"
+                 app:layout_constraintBottom_toTopOf="@+id/button_10"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+                 app:layout_constraintVertical_chainStyle="spread"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 app:layout_constraintLeft_toRightOf="@+id/button_00"
+                 app:layout_constraintRight_toLeftOf="@+id/button_02"
+                 app:layout_constraintVertical_chainStyle="spread"
+                 android:id="@+id/button_01"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+
+                 app:layout_constraintBottom_toTopOf="@+id/button_11"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_01"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:id="@+id/button_02"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+
+                 app:layout_constraintBottom_toTopOf="@+id/button_12"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/button_00"
+                 app:layout_constraintStart_toStartOf="parent"
+                 android:id="@+id/button_10"
+                 app:layout_constraintBottom_toTopOf="@id/button_20"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 app:layout_constraintBottom_toTopOf="@+id/button_21"
+                 android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/button_01"
+                 app:layout_constraintLeft_toRightOf="@+id/button_10"
+                 app:layout_constraintRight_toLeftOf="@+id/button_12" android:id="@+id/button_11"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/button_02"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintLeft_toRightOf="@+id/button_11"
+                 android:id="@+id/button_12"
+                 app:layout_constraintBottom_toTopOf="@+id/button_22"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/button_10"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintRight_toLeftOf="@+id/button_21" android:id="@+id/button_20"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_20"
+                 app:layout_constraintRight_toLeftOf="@+id/button_22"
+                 app:layout_constraintTop_toBottomOf="@+id/button_11"
+                 android:id="@+id/button_21"
+                 app:layout_constraintBottom_toBottomOf="parent"/>
+
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_21"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/button_12"
+                 android:id="@+id/button_22"
+                 app:layout_constraintBottom_toBottomOf="parent"/>
+     </ConstraintSet>
+
+     <ConstraintSet android:id="@+id/end">
+
+         <Constraint
+                 android:text="Motion Layout"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/motionLayoutAnimationButton" app:layout_constraintEnd_toStartOf="@+id/reset_button"
+                 android:layout_marginEnd="16dp" app:layout_constraintBaseline_toBaselineOf="@+id/reset_button">
+             <CustomAttribute motion:attributeName="backgroundColor"
+             motion:customColorValue="@color/colorAccent"> </CustomAttribute>
+         </Constraint>
+
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 android:id="@+id/button_00"
+                 app:layout_constraintBottom_toTopOf="@+id/button_10"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+                 app:layout_constraintVertical_chainStyle="spread"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 app:layout_constraintLeft_toRightOf="@+id/button_00"
+                 app:layout_constraintRight_toLeftOf="@+id/button_02"
+                 app:layout_constraintVertical_chainStyle="spread"
+                 android:id="@+id/button_01"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+
+                 app:layout_constraintBottom_toTopOf="@+id/button_11"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_01"
+                 app:layout_constraintTop_toBottomOf="@+id/guideline"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 android:id="@+id/button_02"
+                 app:layout_constraintHorizontal_chainStyle="spread"
+
+                 app:layout_constraintBottom_toTopOf="@+id/button_12"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/button_00"
+                 app:layout_constraintStart_toStartOf="parent"
+                 android:id="@+id/button_10"
+                 app:layout_constraintBottom_toTopOf="@id/button_20"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 app:layout_constraintBottom_toTopOf="@+id/button_21"
+                 android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/button_01"
+                 app:layout_constraintLeft_toRightOf="@+id/button_10"
+                 app:layout_constraintRight_toLeftOf="@+id/button_12" android:id="@+id/button_11"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintTop_toBottomOf="@+id/button_02"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintLeft_toRightOf="@+id/button_11"
+                 android:id="@+id/button_12"
+                 app:layout_constraintBottom_toTopOf="@+id/button_22"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/button_10"
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintBottom_toBottomOf="parent"
+                 app:layout_constraintRight_toLeftOf="@+id/button_21" android:id="@+id/button_20"/>
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_20"
+                 app:layout_constraintRight_toLeftOf="@+id/button_22"
+                 app:layout_constraintTop_toBottomOf="@+id/button_11"
+                 android:id="@+id/button_21"
+                 app:layout_constraintBottom_toBottomOf="parent"/>
+
+         <Constraint
+                 android:text=""
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 app:layout_constraintLeft_toRightOf="@+id/button_21"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintTop_toBottomOf="@+id/button_12"
+                 android:id="@+id/button_22"
+                 app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+        &lt;!&ndash; <Constraint
+                 android:id="@+id/motionLayoutAnimationButton"
+                 android:layout_width="64dp"
+                 android:layout_height="64dp"
+                 />&ndash;&gt;
+     </ConstraintSet>-->
+
+
+</MotionScene>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update the Task"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
+            android:layout_margin="10dp"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+        <EditText
+                android:id="@+id/taskET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Task"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+
+        <EditText
+                android:id="@+id/descriptionET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+
+        <EditText
+                android:id="@+id/finishByET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Finish By"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update Task"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="10dp"/>
+
+
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete Task"
+            android:background="@android:color/holo_blue_bright"
+            android:layout_margin="10dp"/>
+
+
+</LinearLayout>
