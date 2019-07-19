@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:textSize="30sp"
+            android:layout_height="wrap_content" android:id="@+id/serviceResponce"/>
+    <Button
+            android:onClick="onClick"
+            android:text="start Service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"/>
+
+
+
+    <TextView
+
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:textSize="30sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/serviceResponceHandler"/>
+
+
+
+    <Button
+            android:onClick="onClick"
+            android:text="start Service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonHandler"/>
+</LinearLayout>

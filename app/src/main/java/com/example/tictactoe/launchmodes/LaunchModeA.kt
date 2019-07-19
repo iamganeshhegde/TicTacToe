@@ -16,7 +16,9 @@ class LaunchModeA: AppCompatActivity() {
 
 
 
-        launchModeBFromA.setOnClickListener { startActivity(Intent(this,LaunchModeBActivity::class.java)) }
+        launchModeBFromA.setOnClickListener {
+            startActivity(Intent(this,LaunchModeBActivity::class.java)) }
+
 
     }
 }

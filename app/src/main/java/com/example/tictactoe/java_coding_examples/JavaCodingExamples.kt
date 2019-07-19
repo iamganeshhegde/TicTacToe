@@ -75,7 +75,8 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
 
 
 //        merge sort -working
-        var mergableArray = intArrayOf(1,3,5,9,7,2)
+//        var mergableArray = intArrayOf(1,3,5,9,7,2)
+        var mergableArray = intArrayOf(1,3,2)
 
 
         var mergeSortclass = MergeSortClass()

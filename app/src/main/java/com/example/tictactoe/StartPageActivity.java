@@ -1,9 +1,11 @@
 package com.example.tictactoe;
 
-import android.annotation.TargetApi;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,13 +23,17 @@ import com.example.tictactoe.java_coding_examples.JavaCodingExamples;
 import com.example.tictactoe.launchmodes.LaunchModeA;
 import com.example.tictactoe.multithreadingExample.MultiThreadingExampleActivity;
 import com.example.tictactoe.pending_intent.PendingIntentActivity;
+import com.example.tictactoe.pure_java_lang.PureJavaLangCodes;
 import com.example.tictactoe.roomExample.RoomExampleActivity;
 import com.example.tictactoe.rxjavaexample.RXJavaActivity;
 import com.example.tictactoe.sensorsExample.SensorsExampleActivity;
 import com.example.tictactoe.servicesExample.ServicesExampleActivity;
 import com.example.tictactoe.twitterExample.ui.activities.TwitterMainActivity;
+import com.example.tictactoe.ui_update_service.ServiceUIUpdateClass;
 import com.example.tictactoe.viewPager2.ViewPagerActivity;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 
 public class StartPageActivity extends AppCompatActivity implements View.OnClickListener{
@@ -35,7 +41,7 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
     private static final String TAG = StartPageActivity.class.getSimpleName();
     Button btnTicTacToe,btnViewPager2,btnAnimation,btnRXJava,btnContentProvider,
             btnService,btnArrayList,btnMultiThreading,btnSensors,btnRoom,btnLaunchMode,
-            btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview;
+            btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +50,7 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_start_page);
 A a=new B();
 a.say();
+((B) a).print();
 
         btnTicTacToe = findViewById(R.id.btnTicTacToe);
         btnViewPager2 = findViewById(R.id.btnViewPager2);
@@ -60,6 +67,8 @@ a.say();
         btnTwitter = findViewById(R.id.btnTwitter);
         btnJavaCoding = findViewById(R.id.btnJavaCoding);
         btnCameraPreview = findViewById(R.id.btnCameraPreview);
+        btnJavaLangCodes = findViewById(R.id.btnJavaLangCodes);
+        btnServiceUi = findViewById(R.id.btnServiceUi);
 
         btnTicTacToe.setOnClickListener(this);
         btnViewPager2.setOnClickListener(this);
@@ -76,11 +85,18 @@ a.say();
         btnTwitter.setOnClickListener(this);
         btnJavaCoding.setOnClickListener(this);
         btnCameraPreview.setOnClickListener(this);
+        btnJavaLangCodes.setOnClickListener(this);
+        btnServiceUi.setOnClickListener(this);
 
 
         /*A classA = new B();
         classA.say();
         classA.print();*/
+
+
+
+
+
 
 
 
@@ -171,6 +187,65 @@ a.say();
             case R.id.btnCameraPreview:
                 startActivity(new Intent(this, CameraPreviewActivity.class));
                 break;
+
+
+            case R.id.btnJavaLangCodes:
+                startActivity(new Intent(this, PureJavaLangCodes.class));
+                break;
+
+            case R.id.btnServiceUi:
+                startActivity(new Intent(this, ServiceUIUpdateClass.class));
+//                startActivity(new Intent(this, ServiceUIUpdateClass.class));
+
+              /*  PackageInfo info;
+                try {
+                    info = getPackageManager().getPackageInfo("com.you.name", PackageManager.GET_SIGNATURES);
+                    for (Signature signature : info.signatures) {
+                        MessageDigest md;
+                        md = MessageDigest.getInstance("SHA");
+                        md.update(signature.toByteArray());
+                        String something = new String(Base64.encode(md.digest(), 0));
+                        //String something = new String(Base64.encodeBytes(md.digest()));
+                        Log.e("hash key", something);
+                    }
+                } catch (PackageManager.NameNotFoundException e1) {
+                    Log.e("name not found", e1.toString());
+                } catch (NoSuchAlgorithmException e) {
+                    Log.e("no such an algorithm", e.toString());
+                } catch (Exception e) {
+                    Log.e("exception", e.toString());
+                }*/
+
+
+
+
+
+/*
+ To get the keytool for facebook
+
+    try {
+        PackageInfo info2 =getPackageManager().getPackageInfo(getPackageName(), PackageManager.GET_SIGNATURES);
+        for (Signature signature : info2.signatures) {
+            MessageDigest md = MessageDigest.getInstance("SHA");
+            md.update(signature.toByteArray());
+            String hashKey = new String(android.util.Base64.encode(md.digest(), 0));
+            Log.i(TAG, "printHashKey() Hash Key: " + hashKey);
+        }
+    } catch (NoSuchAlgorithmException e) {
+        Log.e(TAG, "printHashKey()" + e);
+    } catch (Exception e) {
+
+        Log.e(TAG, "printHashKey()" + e);
+    }
+            
+*/
+
+
+
+
+
+
+            break;
 
         }
     }

@@ -10,11 +10,12 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
 
-    <uses-feature android:name="android.hardware.Sensor.proximity"
-    android:required="true"/>
-    <uses-feature android:name="android.hardware.Sensor.gyroscope"
-    android:required="true"/>
-
+    <uses-feature
+            android:name="android.hardware.Sensor.proximity"
+            android:required="true"/>
+    <uses-feature
+            android:name="android.hardware.Sensor.gyroscope"
+            android:required="true"/>
 
     <application
             android:allowBackup="true"
@@ -23,12 +24,20 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <service
+                android:name=".ui_update_service.MyIntentService"
+                android:exported="false">
+        </service>
+
         <activity android:name=".MainActivity">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity android:name=".SlideItActivity"/>
         <activity android:name=".db.DatabaseActivity"/>
@@ -41,18 +50,17 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".viewPager2.ViewPagerActivity"/>
         <activity android:name=".AnimationExamplesActivity"/>
         <activity android:name=".rxjavaexample.RXJavaActivity"/>
         <activity android:name=".contentProviderExample.ContentProviderActivity"/>
-        
-        
-        <provider android:authorities="com.example.tictactoe.contentProviderExample"
-                  android:name=".contentProviderExample.ContactsProvider"
-                  android:exported="true"
-                  android:readPermission="com.example.tictactoe.contentProviderExample.READ_DATABASE"
-                  android:writePermission="com.example.tictactoe.contentProviderExample.WRITE_DATABASE"/>
+
+        <provider
+                android:name=".contentProviderExample.ContactsProvider"
+                android:authorities="com.example.tictactoe.contentProviderExample"
+                android:exported="true"
+                android:readPermission="com.example.tictactoe.contentProviderExample.READ_DATABASE"
+                android:writePermission="com.example.tictactoe.contentProviderExample.WRITE_DATABASE"/>
 
         <activity android:name=".servicesExample.ServicesExampleActivity"/>
         <activity android:name=".multithreadingExample.MultiThreadingExampleActivity"/>
@@ -60,27 +68,34 @@
         <activity android:name=".roomExample.RoomExampleActivity"/>
         <activity android:name=".twitterExample.ui.activities.TwitterMainActivity">
             <intent-filter>
-            <data android:scheme="oauth" android:host="t4jsample"/>
+                <data
+                        android:host="t4jsample"
+                        android:scheme="oauth"/>
             </intent-filter>
         </activity>
         <activity android:name=".pending_intent.PendingIntentActivity"/>
         <activity android:name=".launchmodes.LaunchModeA"/>
         <activity android:name=".launchmodes.LaunchModeCActivity"/>
-        <activity android:name=".launchmodes.LaunchModeBActivity"
+        <activity
+                android:name=".launchmodes.LaunchModeBActivity"
                 android:launchMode="singleInstance"/>
         <activity android:name=".launchmodes.LaunchModeDActivity"/>
         <activity android:name=".java_coding_examples.JavaCodingExamples"/>
         <activity android:name=".camera_without_preview.CameraPreviewActivity"/>
+        <activity android:name=".pure_java_lang.PureJavaLangCodes"/>
+        <activity android:name=".ui_update_service.ServiceUIUpdateClass"/>
 
         <service android:name=".servicesExample.SampleService"/>
         <service android:name=".servicesExample.SampleBoundService"/>
         <service android:name=".servicesExample.SampleIntentService"/>
-
-        <service android:name=".servicesExample.ForegroundService"
-        android:enabled="true"
-        android:exported="true"/>
+        <service
+                android:name=".servicesExample.ForegroundService"
+                android:enabled="true"
+                android:exported="true"/>
         <service android:name=".servicesExample.SecondSampleServiceB"/>
-        <!--<receiver android:name=".servicesExample.ServicesExampleActivity$MyReceiver"/>-->
+        <service android:name=".ui_update_service.HandlerUIUpdateService"/>
+
+
     </application>
 
 </manifest>

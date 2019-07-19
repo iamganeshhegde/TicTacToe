@@ -76,9 +76,10 @@
 
         <Button
                 android:id="@+id/btnLaunchMode" android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Launch modes"/>
+                android:text="Launch modes"/>
         <Button
-                android:id="@+id/btnPendingIntent" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btnPendingIntent" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Pending intent"/>
 
         <Button
@@ -90,9 +91,19 @@
                 android:text="Java coding examples"/>
 
         <Button
-                android:id="@+id/btnCameraPreview" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:id="@+id/btnCameraPreview" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Camera Preview"/>
 
+        <Button
+                android:id="@+id/btnJavaLangCodes"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Java Language codes"/>
+
+        <Button
+                android:id="@+id/btnServiceUi"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Service UI Update"/>
 
 
     </LinearLayout>
