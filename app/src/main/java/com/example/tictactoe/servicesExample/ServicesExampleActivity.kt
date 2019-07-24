@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.IBinder
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.tictactoe.R
+import com.example.tictactoe.java_coding_examples.JavaCodingExamples
 import io.reactivex.internal.subscribers.BoundedSubscriber
 import kotlinx.android.synthetic.main.activity_services_example.*
 
@@ -21,6 +23,10 @@ class ServicesExampleActivity: AppCompatActivity() {
      var boundedService: SampleBoundService? = null
     var isBound = false
     var mServiceBound = false
+
+    var TAG = ServicesExampleActivity::class.java.name
+
+
 
 
     lateinit var myReceiver:MyReceiver
@@ -93,9 +99,17 @@ class ServicesExampleActivity: AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_services_example)
+
+
+
+        Log.i(TAG,JavaCodingExamples.returnInt().toString())
+
+
+
 
 
         btnStartService.setOnClickListener { startSampleService() }

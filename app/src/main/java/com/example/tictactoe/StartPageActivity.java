@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import com.example.tictactoe.camera_without_preview.CameraPreviewActivity;
+import com.example.tictactoe.charging.ChargingChecking;
 import com.example.tictactoe.contentProviderExample.ContentProviderActivity;
 import com.example.tictactoe.example.A;
 import com.example.tictactoe.example.B;
@@ -41,7 +42,8 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
     private static final String TAG = StartPageActivity.class.getSimpleName();
     Button btnTicTacToe,btnViewPager2,btnAnimation,btnRXJava,btnContentProvider,
             btnService,btnArrayList,btnMultiThreading,btnSensors,btnRoom,btnLaunchMode,
-            btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi;
+            btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi,
+            btnCharging;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,6 +71,7 @@ a.say();
         btnCameraPreview = findViewById(R.id.btnCameraPreview);
         btnJavaLangCodes = findViewById(R.id.btnJavaLangCodes);
         btnServiceUi = findViewById(R.id.btnServiceUi);
+        btnCharging = findViewById(R.id.btnCharging);
 
         btnTicTacToe.setOnClickListener(this);
         btnViewPager2.setOnClickListener(this);
@@ -87,6 +90,7 @@ a.say();
         btnCameraPreview.setOnClickListener(this);
         btnJavaLangCodes.setOnClickListener(this);
         btnServiceUi.setOnClickListener(this);
+        btnCharging.setOnClickListener(this);
 
 
         /*A classA = new B();
@@ -94,11 +98,7 @@ a.say();
         classA.print();*/
 
 
-
-
-
-
-
+//        int i = JavaCodingExamples.Companion.returnInt();
 
 
     }
@@ -246,6 +246,13 @@ a.say();
 
 
             break;
+
+
+            case R.id.btnCharging:
+
+                startActivity(new Intent(this, ChargingChecking.class));
+
+                break;
 
         }
     }

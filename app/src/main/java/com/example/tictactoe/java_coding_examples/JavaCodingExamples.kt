@@ -11,6 +11,25 @@ import java.lang.Exception
 import java.util.*
 
 class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
+
+
+
+
+    companion object{
+
+        var integerYT:Int = 0
+
+        fun returnInt():Int{
+
+            integerYT = 10
+
+            return integerYT;
+        }
+    }
+
+
+
+
     override fun onClick(v: View?) {
 
 
@@ -23,6 +42,85 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_java_coding)
+
+
+        //swap any 2 things
+
+
+        var a = IntArray(10)
+        var b = IntArray(10)
+
+        run {
+            var i = 0
+            var j = 10
+            while (i < 10 && j > 0) {
+                a[i] = i
+                b[i] = j
+                i++
+                j--
+            }
+        }
+
+        for (i in a.indices) {
+            Log.e("before  swap", "" + a[i])
+            Log.e("before  swap", "" + b[i])
+
+        }
+
+//        b=a
+//        a = swapMethod(b, a.copyInto(b,0,0,b.size) )
+        a = swapMethod(b, {b=a}() )
+        for (i in a.indices) {
+            Log.e("after  swap A", "" + a[i])
+            Log.e("after  swap B", "" + b[i])
+
+        }
+
+
+        a = a.reversedArray()
+        var newMergedArray = merge2Arrays(a,b)
+
+        for(i in 0 until newMergedArray.size){
+            Log.i(TAG,"After merging "+newMergedArray[i].toString())
+        }
+
+
+
+
+
+       /* var arraySwapA:IntArray = intArrayOf(1,2,3,4,5,6)
+        var arraySwapB = intArrayOf(6,5,4,3,2,1)
+
+
+
+//        Arrays.copyOf(arraySwapA)
+
+//        var temp = Arrays.copyOf(arraySwapA,arraySwapA.size)
+        arraySwapA = swapMethod(arraySwapB, arraySwapB=arraySwapA )
+
+        Log.i(TAG, arraySwapA.toString())*/
+
+            //example to check it hits the thundercloud or not
+        var arrayOfClouds = arrayOf(0,0,1,0,1,0,0,1,0)
+
+        var checkCloudsHitting = checkCloudsHitting(arrayOfClouds, 0)
+        Log.i(TAG,"arrayOfClouds: "+ checkCloudsHitting.toString())
+
+
+        //example to check strings matching or not
+        var n =12
+
+        var  s: String = "DDUUDDUDUUUD"
+
+        var countingValleys = countingValleys(n, s)
+        Log.i(TAG, countingValleys.toString())
+
+
+
+        //example to check repeatation of a in a string
+        var arrayOfRepeatations = arrayOf("abaabaabaaba")
+
+        var count = countingAs(arrayOfRepeatations,10)
 
 
 
@@ -116,6 +214,136 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
 
 
     }
+
+    private fun merge2Arrays(a: IntArray, b: IntArray):IntArray {
+
+        var i=0;
+        var j=0;
+        var x=0
+        var newMegedArray = IntArray(a.size+b.size)
+
+        while(i < a.size  && j< b.size){
+
+            if(a[i]<b[j]){
+                newMegedArray[x] = a[i]
+                i++
+
+            }else{
+                newMegedArray[x] = b[j]
+                j++
+            }
+            x++
+
+        }
+
+        while (j < b.size){
+            newMegedArray[x] = b[j]
+            j++
+            x++
+        }
+
+        while (i < a.size){
+            newMegedArray[x] = a[i]
+            i++
+            x++
+        }
+
+        return newMegedArray
+
+    }
+
+    /*private fun swapMethod(array1: IntArray, array2: Any): IntArray {
+        return array1
+
+    }*/
+
+    fun swapMethod(a: IntArray, unit: Unit): IntArray {
+
+        return a
+
+    }
+
+    private fun countingAs(arrayOfRepeatations: Array<String>, totalLettersToCheck: Int): Int {
+
+
+        var size = arrayOfRepeatations.size
+
+        return 10;
+
+    }
+
+    private fun checkCloudsHitting(arrayOfClouds: Array<Int>, start: Int): Int {
+
+
+
+
+        var size = arrayOfClouds.size
+        var jump = 0
+        var i=1;
+        var j = size-1;
+
+        while(j > i){
+
+            if(  arrayOfClouds[i+1]== 0){
+                i += 2
+
+            }else{
+                i++
+            }
+            jump++
+
+
+        }
+        if(j==i){
+            jump++
+        }
+
+
+        return jump
+
+
+     /*   for(i in 0 until size){
+
+            if(arrayOfClouds[i+1] == 1){
+
+
+            }else{
+
+            }
+
+            jump++
+        }*/
+
+
+    }
+
+
+    fun countingValleys(n: Int, s: String): Int {
+
+            var array = s.toCharArray()
+            var totalCount = 0
+            var temp = 0
+            for(i in 0 .. n-1){
+
+                if(array[i].toString().equals("U")){
+                    temp++
+                }else{
+                    temp--
+                }
+
+                if(array[i].toString().equals("U") && temp == 0){
+                    totalCount++
+                }
+
+
+            }
+
+            System.out.println(totalCount.toString())
+
+            return totalCount
+
+        }
+
 
     private fun checkFinally():Int {
 

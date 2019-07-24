@@ -24,6 +24,12 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".charging.ChargingChecking"
+                android:label="@string/title_activity_charging_checking"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
         <service
                 android:name=".ui_update_service.MyIntentService"
                 android:exported="false">
@@ -94,8 +100,7 @@
                 android:exported="true"/>
         <service android:name=".servicesExample.SecondSampleServiceB"/>
         <service android:name=".ui_update_service.HandlerUIUpdateService"/>
-
-
+        <service android:name=".charging.ChargingForegroundService"/>
     </application>
 
 </manifest>

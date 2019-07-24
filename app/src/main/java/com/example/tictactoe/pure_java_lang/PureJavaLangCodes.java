@@ -49,7 +49,11 @@ public class PureJavaLangCodes extends AppCompatActivity implements checkMethodI
             @Override
             public void run() {
 
-                pc.produce();
+                try {
+                    pc.produce();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -57,7 +61,11 @@ public class PureJavaLangCodes extends AppCompatActivity implements checkMethodI
             @Override
             public void run() {
 
-                pc.consume();
+                try {
+                    pc.consume();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -67,9 +75,11 @@ public class PureJavaLangCodes extends AppCompatActivity implements checkMethodI
 
         //t1 finnishes before t2
 
-        t1.join();
-        t2.join();
+//        t1.join();
+//        t2.join();
 
+
+        System.out.println("After calling thread  stArT");
 
 
 
@@ -192,11 +202,63 @@ public class PureJavaLangCodes extends AppCompatActivity implements checkMethodI
 
         LinkedList<Integer> linkedList = new LinkedList<>();
 
-        int capacity = 2;
+        int capacity = 3;
 
-        public void produce(){
+        public void produce() throws InterruptedException {
 
-            
+            int value = 0;
+
+            while (true){
+                synchronized (this)
+                {
+                    while (linkedList.size() == capacity){
+                        wait();
+                    }
+
+                    System.out.println("Producer produced -"+value);
+
+                    //insert jobs to list
+                    linkedList.add(value++);
+
+
+                    //notify consumer thread that it can start consuming
+                    notify();
+
+
+                    //just for understanding
+                    Thread.sleep(1000);
+
+                }
+            }
+
+        }
+
+        public void consume() throws InterruptedException {
+
+            while (true){
+                synchronized (this){
+
+                    //consumer to wait while list is empty
+
+                    while (linkedList.size() == 0){
+                        wait();
+                    }
+
+
+                    //to retrieve value from list
+
+                    int value= linkedList.removeFirst();
+                    System.out.println("Consume Consumed -"+value);
+
+                    //wake up producer
+                    notify();
+
+                    //and sleep
+                    Thread.sleep(1000);
+
+
+                }
+            }
 
         }
 
