@@ -18,6 +18,7 @@ import androidx.core.app.NotificationCompat;
 import com.example.tictactoe.camera_without_preview.CameraPreviewActivity;
 import com.example.tictactoe.charging.ChargingChecking;
 import com.example.tictactoe.contentProviderExample.ContentProviderActivity;
+import com.example.tictactoe.dialog_lifecycle.DialogLifeCycle;
 import com.example.tictactoe.example.A;
 import com.example.tictactoe.example.B;
 import com.example.tictactoe.java_coding_examples.JavaCodingExamples;
@@ -43,7 +44,7 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
     Button btnTicTacToe,btnViewPager2,btnAnimation,btnRXJava,btnContentProvider,
             btnService,btnArrayList,btnMultiThreading,btnSensors,btnRoom,btnLaunchMode,
             btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi,
-            btnCharging;
+            btnCharging,btnDialogLifeCycle;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ a.say();
         btnJavaLangCodes = findViewById(R.id.btnJavaLangCodes);
         btnServiceUi = findViewById(R.id.btnServiceUi);
         btnCharging = findViewById(R.id.btnCharging);
+        btnDialogLifeCycle = findViewById(R.id.btnDialogLifeCycle);
 
         btnTicTacToe.setOnClickListener(this);
         btnViewPager2.setOnClickListener(this);
@@ -91,6 +93,7 @@ a.say();
         btnJavaLangCodes.setOnClickListener(this);
         btnServiceUi.setOnClickListener(this);
         btnCharging.setOnClickListener(this);
+        btnDialogLifeCycle.setOnClickListener(this);
 
 
         /*A classA = new B();
@@ -251,6 +254,12 @@ a.say();
             case R.id.btnCharging:
 
                 startActivity(new Intent(this, ChargingChecking.class));
+
+                break;
+
+            case R.id.btnDialogLifeCycle:
+
+                startActivity(new Intent(this, DialogLifeCycle.class));
 
                 break;
 
@@ -438,8 +447,42 @@ a.say();
         }
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        Log.i(TAG,"StartPage - onRestart");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.i(TAG,"StartPage - onStop");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.i(TAG,"StartPage - onResume");
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i(TAG,"StartPage - onPause");
+
+    }
 
     protected void onDestroy() {
         super.onDestroy();
+        Log.i(TAG,"StartPage - onDestroy");
+
+
     }
 }

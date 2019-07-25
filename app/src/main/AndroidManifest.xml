@@ -90,6 +90,7 @@
         <activity android:name=".camera_without_preview.CameraPreviewActivity"/>
         <activity android:name=".pure_java_lang.PureJavaLangCodes"/>
         <activity android:name=".ui_update_service.ServiceUIUpdateClass"/>
+        <activity android:name=".dialog_lifecycle.DialogLifeCycle"/>
 
         <service android:name=".servicesExample.SampleService"/>
         <service android:name=".servicesExample.SampleBoundService"/>

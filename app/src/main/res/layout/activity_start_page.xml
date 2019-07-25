@@ -111,6 +111,11 @@
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Check Charging"/>
 
+        <Button
+                android:id="@+id/btnDialogLifeCycle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Dialog lifecycle"/>
+
 
     </LinearLayout>
 </ScrollView>
