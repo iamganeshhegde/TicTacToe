@@ -3,9 +3,9 @@ package com.example.tictactoe.roomExample
 import android.content.Context
 import androidx.room.Room
 
-class DatabaseClient {
+class DatabaseClient(context: Context) {
 
-    lateinit var mcontext:Context
+    var mcontext:Context = context
     lateinit var mInstance:DatabaseClient
 
     init {
@@ -14,12 +14,8 @@ class DatabaseClient {
 
     lateinit var appDatabase:AppDatabase
 
-    constructor(context:Context)
-    {
-        mcontext = context
-
+    init {
         appDatabase = Room.databaseBuilder(context,AppDatabase::class.java,"myToDos").build()
-
     }
 
     /*@Synchronized fun getInstance(context: Context): DatabaseClient {

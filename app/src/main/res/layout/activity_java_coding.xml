@@ -9,4 +9,9 @@
             android:layout_height="wrap_content"
             android:text="6 kingdom"/>
 
+    <Button
+            android:id="@+id/btnFibonaci"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fibonacii"/>
 </LinearLayout>

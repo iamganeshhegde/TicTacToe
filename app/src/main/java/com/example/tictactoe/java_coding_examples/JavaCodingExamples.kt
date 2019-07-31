@@ -32,6 +32,29 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
 
     override fun onClick(v: View?) {
 
+        when(v){
+
+            btnFibonaci -> {
+
+                var totalValue = callFibonaciMethod(4)
+                Log.i(TAG,"Sum of fibonacii"+totalValue)
+            }
+        }
+
+    }
+
+    private fun callFibonaciMethod(number: Int):Int {
+
+        if(number <= 1){
+            return number
+        }else{
+            var left = callFibonaciMethod(number-1)
+            var right = callFibonaciMethod(number-2)
+//            return callFibonaciMethod(number-1)+callFibonaciMethod(number-2)
+
+            return left+right
+        }
+
 
     }
 
@@ -43,6 +66,9 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_java_coding)
 
+
+
+        btnFibonaci.setOnClickListener(this)
 
         //swap any 2 things
 
