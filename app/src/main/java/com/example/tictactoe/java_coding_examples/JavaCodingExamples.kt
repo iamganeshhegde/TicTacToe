@@ -9,8 +9,21 @@ import com.example.tictactoe.R
 import kotlinx.android.synthetic.main.activity_java_coding.*
 import java.lang.Exception
 import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
+
+
+    private var totalCountOfGerms: Int = 0
+    var arrayOfNumbers  = arrayOf(1,2,3)
+    var germsArray1 = arrayOf("B","X","X")
+    var germsArray2 = arrayOf("X","X","X")
+    var maxColumn = 3
+    var maxRow = 2
+
+    var totalArrayOfGerms = arrayOf(germsArray1,germsArray2)
 
 
 
@@ -39,7 +52,338 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
                 var totalValue = callFibonaciMethod(4)
                 Log.i(TAG,"Sum of fibonacii"+totalValue)
             }
+
+            btnComparable ->{
+
+                compareElementsUsingComparable()
+
+            }
+            btnComparator ->{
+                compareElementsUsingComparator()
+
+            }
+
+            btnLambdaKotlin ->{
+                checkLambdaExpressions()
+            }
+            btnSubset -> {
+                checkSubset()
+            }
+
+            btnTreeElements ->{
+                checkTreeElements()
+            }
+
+            btnGerms ->{
+                checkGermsCount(2,3)
+            }
+
         }
+
+    }
+
+    private fun checkGermsCount(rows: Int, columns: Int) {
+
+        for(i in 0 until rows){
+
+            for(j in 0 until columns){
+
+                if(totalArrayOfGerms[i][j] == "B"){
+
+                    changeArrayElements(i,j)
+                }
+
+            }
+
+        }
+
+
+        for(i in 0 until rows){
+
+            for(j in 0 until columns){
+
+
+                if(totalArrayOfGerms[i][j] == "X"){
+
+                    totalCountOfGerms ++
+                }
+
+                Log.i(TAG,totalArrayOfGerms[i][j])
+
+            }
+
+        }
+
+        Log.i(TAG, totalCountOfGerms.toString())
+
+
+
+    }
+
+    private fun changeArrayElements(row: Int, column: Int) {
+
+        if(column+1 < maxColumn  && totalArrayOfGerms[column+1][row] == "X"){
+            totalArrayOfGerms[column+1][row] = "Y"
+        }
+
+        if(column-1 > -1 && totalArrayOfGerms[column-1][row] == "X"){
+            totalArrayOfGerms[column-1][row] = "Y"
+        }
+
+        if(row+1 < maxRow && totalArrayOfGerms[column][row+1] == "X"){
+            totalArrayOfGerms[column][row+1] = "Y"
+        }
+
+        if(row-1 > -1 && totalArrayOfGerms[column][row-1] == "X"){
+            totalArrayOfGerms[column][row-1] = "Y"
+        }
+
+    }
+
+    private fun checkTreeElements() {
+
+
+         var root:TreeNodes = TreeNodes(1)
+        root.leftTreeNode = TreeNodes(2)
+        root.rightTreeNode = TreeNodes(3)
+
+        root.leftTreeNode?.leftTreeNode = TreeNodes(4)
+        root.leftTreeNode?.rightTreeNode = TreeNodes(5)
+        root.rightTreeNode?.leftTreeNode = TreeNodes(6)
+        root.rightTreeNode?.rightTreeNode = TreeNodes(7)
+
+        root.leftTreeNode?.leftTreeNode?.leftTreeNode = TreeNodes(8)
+
+
+        var height = findHeight(root)
+
+        Log.i(TAG," Height of Tree :"+ (height-1).toString())
+
+        var isEven = false
+
+        for(i in 1..height+1){
+            isEven = i%2 == 0
+            printLevelOrderTraversal(root,i,isEven)
+        }
+
+
+
+        var totalElements = printNumberOfElementsInTree(root)
+
+        Log.i(TAG,"Total number of elements"+ totalElements.toString())
+
+    }
+
+    private fun printNumberOfElementsInTree(node:TreeNodes?): Int {
+
+        if(node == null){
+            return 0
+        }else{
+            var left = printNumberOfElementsInTree(node.leftTreeNode)
+            var right = printNumberOfElementsInTree(node.rightTreeNode)
+
+
+            return 1+left+right
+        }
+    }
+
+    private fun printLevelOrderTraversal(
+        root: TreeNodes?,
+        level: Int,
+        isEven: Boolean
+    ){
+
+        if(root == null){
+            return
+        }
+
+        if(level == 1){
+            Log.i(TAG," print level order "+ root.data.toString())
+        }else{
+
+
+//            normally printing as 1,2,3,4,5,6,7,8...
+//            printLevelOrderTraversal(root.leftTreeNode, level-1)
+//            printLevelOrderTraversal(root.rightTreeNode, level-1)
+
+
+
+//            printing as 1,2,3,7,6,5,4,8...
+            if(isEven){
+                printLevelOrderTraversal(root.leftTreeNode, level-1, isEven)
+                printLevelOrderTraversal(root.rightTreeNode, level-1, isEven)
+            }else{
+                printLevelOrderTraversal(root.rightTreeNode, level-1, isEven)
+                printLevelOrderTraversal(root.leftTreeNode, level-1, isEven)
+
+            }
+
+        }
+    }
+
+    private fun findHeight(node: TreeNodes?):Int {
+
+
+        if(node == null){
+            return 0
+        }
+
+        var left = findHeight(node.leftTreeNode)
+        var right = findHeight(node.rightTreeNode)
+
+        if(left <= right ){
+            return right+1
+        }else{
+            return left+1
+        }
+
+
+    }
+
+    class TreeNodes(var data: Int)  {
+        var leftTreeNode:TreeNodes? = null
+        var rightTreeNode:TreeNodes? = null
+
+
+    }
+
+    private fun checkSubset() {
+
+
+        mergeAllElements(arrayOfNumbers,0,arrayOfNumbers.size)
+
+
+    }
+
+    private fun mergeAllElements(arrayOfNumbers: Array<Int>, start: Int, end: Int): Array<Int> {
+
+        if(arrayOfNumbers.size <= 1){
+            return arrayOfNumbers
+        }
+        var left = arrayOfNumbers
+//        mergeAllElements()
+        return arrayOf(0);
+
+      /*  while (arrayOfNumbers.size >= 1){
+            mergeAllElements(arrayOfNumbers)
+
+
+        }
+
+
+*/
+    }
+
+    private fun checkLambdaExpressions() {
+
+
+        Log.i(TAG, double(2).toString())
+
+        Log.i(TAG,doubleString(4))
+
+
+        Log.i(TAG,myLambda("Abc", 3))
+
+
+
+    }
+    var double = {
+            number:Int -> number*2
+    }
+
+    var doubleString = {
+        number:Int ->
+        val num = number*2
+        num.toString()
+    }
+
+    var myLambda:(String,Int) -> String = {
+        string,int ->
+        "$string - $int"
+    }
+
+
+    private fun compareElementsUsingComparator() {
+
+        var employeesArray = ArrayList<Employee>()
+
+        for(i in 0..4){
+            var employee= Employee()
+
+            employee.id = 5-i
+            employee.name = "Ganesh"+i
+            employee.salary = (2000+i).toLong()
+            employee.age= 25+i
+
+
+            employeesArray.add(employee)
+        }
+
+        var employee= Employee()
+
+        employee.id = 4
+        employee.name = "Ganesh4"
+        employee.salary = (2000).toLong()
+        employee.age= 25
+
+        employeesArray.add(employee)
+
+
+        var ageComparator = kotlin.Comparator { e:Employee, e2:Employee ->
+
+            var diff = e.id - e2.id
+
+            if(diff == 0){
+               diff = e.name.compareTo(e2.name)
+            }
+            return@Comparator diff
+        }
+
+        Collections.sort(employeesArray,ageComparator)
+//        employeesArray.sort(employeesArray,ageComparator)
+
+        for(i in 0..5){
+
+            Log.i(TAG,"Employees array id:name:salary:age"
+                    +employeesArray.get(i).id+" "
+                    +employeesArray[i].name+" "
+                    +employeesArray.get(i).salary+" "
+                    +employeesArray.get(i).age)
+
+        }
+
+
+    }
+
+    private fun compareElementsUsingComparable() {
+
+        var employeesArray = ArrayList<Employee>()
+
+
+        for(i in 0..4){
+            var employee= Employee()
+
+            employee.id = 5-i
+            employee.name = "Ganesh"+i
+            employee.salary = (2000+i).toLong()
+            employee.age= 25+i
+
+
+            employeesArray.add(employee)
+        }
+
+        employeesArray.sort()
+
+        for(i in 0..4){
+
+            Log.i(TAG,"Employees array id:name:salary:age"
+                    +employeesArray.get(i).id+" "
+                    +employeesArray[i].name+" "
+                    +employeesArray.get(i).salary+" "
+                    +employeesArray.get(i).age)
+
+        }
+
 
     }
 
@@ -69,6 +413,11 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
 
 
         btnFibonaci.setOnClickListener(this)
+        btnComparator.setOnClickListener(this)
+        btnComparable.setOnClickListener(this)
+        btnLambdaKotlin.setOnClickListener(this)
+        btnTreeElements.setOnClickListener(this)
+        btnGerms.setOnClickListener(this)
 
         //swap any 2 things
 
@@ -164,6 +513,9 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
         //working - used to remove duplicate elements in array
         RemoveDuplicateArrayElements()
 
+        //map
+        RemoveDuplicateArrayElementsUsingMap()
+
         //remove duplicate after sorting
         RemoveDuplicateSorting()
 
@@ -237,6 +589,52 @@ class JavaCodingExamples: View.OnClickListener,AppCompatActivity() {
 //            Log.i(TAG,"array sorted is : "+sort[i])
 //
 //        }
+
+
+    }
+
+    private fun RemoveDuplicateArrayElementsUsingMap() {
+
+        var array = arrayOf(1,2,3,4,4,5,2,3,1)
+
+        var tempArray:IntArray = IntArray(array.size)
+        var map:HashMap<Int,Int?> = HashMap<Int,Int?>()
+        var hashSet = HashSet<Int>()
+
+
+
+        for(i in 0 until array.size){
+            hashSet.add(array[i])
+        }
+
+        Log.i(TAG,"Hashset for removing duplicate"+hashSet.toString())
+
+
+        for(i in 0 until array.size){
+
+            var j = map.get(array[i])
+            if(j == null){
+                map.put(array[i],1)
+            }else{
+                map.put(array[i],j+1)
+            }
+        }
+
+
+        map.forEach {  (key,value) ->
+
+            Log.i(TAG,"Hasmap for repeating the values "+key+ " "+value)
+        }
+       /* map.entryS
+        var entries:HashMap<Int,Int?> = map.entries
+        for(i in 0 until entries.size){
+            entries
+            Log.i(TAG,"Hasmap for repeating the values "+entries)
+        }*/
+
+
+
+
 
 
     }

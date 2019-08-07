@@ -14,4 +14,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fibonacii"/>
+
+
+    <Button
+            android:id="@+id/btnComparator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comparator"/>
+
+    <Button
+            android:id="@+id/btnComparable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comparable"/>
+
+
+    <Button
+            android:id="@+id/btnLambdaKotlin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lambda"/>
+
+
+    <Button
+            android:id="@+id/btnSubset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subset"/>
+
+    <Button
+            android:id="@+id/btnTreeElements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Print elemenyts of tree "/>
+
+    <Button
+            android:id="@+id/btnGerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="elements germs"/>
+
+
+    <Button
+            android:id="@+id/btnBreakFor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Break"/>
 </LinearLayout>

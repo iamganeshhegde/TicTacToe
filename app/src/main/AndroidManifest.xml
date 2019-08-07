@@ -91,6 +91,9 @@
         <activity android:name=".pure_java_lang.PureJavaLangCodes"/>
         <activity android:name=".ui_update_service.ServiceUIUpdateClass"/>
         <activity android:name=".dialog_lifecycle.DialogLifeCycle"/>
+        <activity android:name=".datastructure_questions.DataStructureQuestionsActivity"/>
+        <activity android:name=".image_paint.ImagePaintActivity"/>
+        <activity android:name=".update_progress_handler.UpdateProgressHandler"/>
 
         <service android:name=".servicesExample.SampleService"/>
         <service android:name=".servicesExample.SampleBoundService"/>

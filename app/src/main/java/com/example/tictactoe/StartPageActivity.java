@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,9 +19,11 @@ import androidx.core.app.NotificationCompat;
 import com.example.tictactoe.camera_without_preview.CameraPreviewActivity;
 import com.example.tictactoe.charging.ChargingChecking;
 import com.example.tictactoe.contentProviderExample.ContentProviderActivity;
+import com.example.tictactoe.datastructure_questions.DataStructureQuestionsActivity;
 import com.example.tictactoe.dialog_lifecycle.DialogLifeCycle;
 import com.example.tictactoe.example.A;
 import com.example.tictactoe.example.B;
+import com.example.tictactoe.image_paint.ImagePaintActivity;
 import com.example.tictactoe.java_coding_examples.JavaCodingExamples;
 import com.example.tictactoe.launchmodes.LaunchModeA;
 import com.example.tictactoe.multithreadingExample.MultiThreadingExampleActivity;
@@ -32,6 +35,7 @@ import com.example.tictactoe.sensorsExample.SensorsExampleActivity;
 import com.example.tictactoe.servicesExample.ServicesExampleActivity;
 import com.example.tictactoe.twitterExample.ui.activities.TwitterMainActivity;
 import com.example.tictactoe.ui_update_service.ServiceUIUpdateClass;
+import com.example.tictactoe.update_progress_handler.UpdateProgressHandler;
 import com.example.tictactoe.viewPager2.ViewPagerActivity;
 
 import java.security.MessageDigest;
@@ -44,7 +48,9 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
     Button btnTicTacToe,btnViewPager2,btnAnimation,btnRXJava,btnContentProvider,
             btnService,btnArrayList,btnMultiThreading,btnSensors,btnRoom,btnLaunchMode,
             btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi,
-            btnCharging,btnDialogLifeCycle;
+            btnCharging,btnDialogLifeCycle,btnDatastructures,btnImagePaint,btnFinish,btnUpdateProgress;
+
+    TextView tvCheckTextInt;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,6 +80,10 @@ a.say();
         btnServiceUi = findViewById(R.id.btnServiceUi);
         btnCharging = findViewById(R.id.btnCharging);
         btnDialogLifeCycle = findViewById(R.id.btnDialogLifeCycle);
+        btnDatastructures = findViewById(R.id.btnDatastructures);
+        btnImagePaint = findViewById(R.id.btnImagePaint);
+        btnFinish = findViewById(R.id.btnFinish);
+        btnUpdateProgress = findViewById(R.id.btnUpdateProgress);
 
         btnTicTacToe.setOnClickListener(this);
         btnViewPager2.setOnClickListener(this);
@@ -94,7 +104,11 @@ a.say();
         btnServiceUi.setOnClickListener(this);
         btnCharging.setOnClickListener(this);
         btnDialogLifeCycle.setOnClickListener(this);
+        btnDatastructures.setOnClickListener(this);
+        btnImagePaint.setOnClickListener(this);
 
+        btnFinish.setOnClickListener(this);
+        btnUpdateProgress.setOnClickListener(this);
 
         /*A classA = new B();
         classA.say();
@@ -261,6 +275,25 @@ a.say();
 
                 startActivity(new Intent(this, DialogLifeCycle.class));
 
+                break;
+
+            case R.id.btnDatastructures:
+
+                startActivity(new Intent(this, DataStructureQuestionsActivity.class));
+                break;
+
+            case R.id.btnImagePaint:
+
+                startActivity(new Intent(this, ImagePaintActivity.class));
+                break;
+
+            case R.id.btnFinish:
+                finish();
+                break;
+
+            case R.id.btnUpdateProgress:
+
+                startActivity(new Intent(this, UpdateProgressHandler.class));
                 break;
 
         }

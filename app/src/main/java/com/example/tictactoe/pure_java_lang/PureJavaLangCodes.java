@@ -2,21 +2,38 @@ package com.example.tictactoe.pure_java_lang;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.tictactoe.R;
 
 import java.util.*;
 
 public class PureJavaLangCodes extends AppCompatActivity implements checkMethodInterface{
 
     private String TAG = PureJavaLangCodes.class.getName();
+    Button btnForBreak;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
+        setContentView(R.layout.activity_pure_java_lang);
 
+
+        btnForBreak = findViewById(R.id.btnForBreak);
+        btnForBreak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkBreakForLoop();
+
+
+                checkLabelBreak();
+            }
+        });
 
         checkInterfaceMethods();
 
@@ -35,6 +52,59 @@ public class PureJavaLangCodes extends AppCompatActivity implements checkMethodI
             producerConsumerProblem();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    private void checkLabelBreak() {
+
+        abc:for(int i=0; i<5;i++){
+
+
+            for(int j=0; j<3;j++){
+
+                if(i==2){
+
+                    return;
+//                    break abc;
+                }
+
+                Log.i(TAG,"i inside for"+i);
+
+            }
+
+            Log.i(TAG,"i outside for"+i);
+
+
+        }
+    }
+
+    private void checkBreakForLoop() {
+
+        for(int i=0;i<5;i++){
+
+
+            if(i== 2)
+                continue;
+
+
+
+            for(int j=0;j<3;j++){
+
+                if(i == 3){
+                    Log.i(TAG,"Only when i is 3 -- other things will not print");
+
+                    break;
+                }
+
+                Log.i(TAG,"value I inside"+i);
+
+            }
+
+
+
+            Log.i(TAG,"I  outside"+i);
+
         }
 
     }

@@ -117,5 +117,28 @@
                 android:text="Dialog lifecycle"/>
 
 
+
+        <Button
+                android:id="@+id/btnDatastructures"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Datastructures"/>
+
+
+        <Button
+                android:id="@+id/btnImagePaint"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Image adding"/>
+
+
+        <Button
+                android:id="@+id/btnFinish"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Finish"/>
+
+        <Button
+                android:id="@+id/btnUpdateProgress"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Update Progress"/>
+
     </LinearLayout>
 </ScrollView>
