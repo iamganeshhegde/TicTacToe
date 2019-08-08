@@ -30,6 +30,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Find Alladin Magic"/>
+    <Button
+            android:id="@+id/btnFindMissingVal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnFinAladinMagic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Find Missing val"/>
+
 
     <!--<TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"

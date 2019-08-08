@@ -33,6 +33,7 @@ import com.example.tictactoe.roomExample.RoomExampleActivity;
 import com.example.tictactoe.rxjavaexample.RXJavaActivity;
 import com.example.tictactoe.sensorsExample.SensorsExampleActivity;
 import com.example.tictactoe.servicesExample.ServicesExampleActivity;
+import com.example.tictactoe.tv_rv.TVRecyclerViewActivity;
 import com.example.tictactoe.twitterExample.ui.activities.TwitterMainActivity;
 import com.example.tictactoe.ui_update_service.ServiceUIUpdateClass;
 import com.example.tictactoe.update_progress_handler.UpdateProgressHandler;
@@ -48,7 +49,8 @@ public class StartPageActivity extends AppCompatActivity implements View.OnClick
     Button btnTicTacToe,btnViewPager2,btnAnimation,btnRXJava,btnContentProvider,
             btnService,btnArrayList,btnMultiThreading,btnSensors,btnRoom,btnLaunchMode,
             btnPendingIntent,btnTwitter,btnJavaCoding,btnCameraPreview,btnJavaLangCodes,btnServiceUi,
-            btnCharging,btnDialogLifeCycle,btnDatastructures,btnImagePaint,btnFinish,btnUpdateProgress;
+            btnCharging,btnDialogLifeCycle,btnDatastructures,btnImagePaint,btnFinish,btnUpdateProgress,
+            btnTvRV;
 
     TextView tvCheckTextInt;
 
@@ -84,6 +86,7 @@ a.say();
         btnImagePaint = findViewById(R.id.btnImagePaint);
         btnFinish = findViewById(R.id.btnFinish);
         btnUpdateProgress = findViewById(R.id.btnUpdateProgress);
+        btnTvRV = findViewById(R.id.btnTvRV);
 
         btnTicTacToe.setOnClickListener(this);
         btnViewPager2.setOnClickListener(this);
@@ -109,6 +112,7 @@ a.say();
 
         btnFinish.setOnClickListener(this);
         btnUpdateProgress.setOnClickListener(this);
+        btnTvRV.setOnClickListener(this);
 
         /*A classA = new B();
         classA.say();
@@ -294,6 +298,11 @@ a.say();
             case R.id.btnUpdateProgress:
 
                 startActivity(new Intent(this, UpdateProgressHandler.class));
+                break;
+
+            case R.id.btnTvRV:
+
+                startActivity(new Intent(this, TVRecyclerViewActivity.class));
                 break;
 
         }

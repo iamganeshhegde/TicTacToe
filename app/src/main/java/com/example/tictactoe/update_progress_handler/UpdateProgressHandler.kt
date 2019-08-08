@@ -8,7 +8,7 @@ import com.example.tictactoe.R
 import kotlinx.android.synthetic.main.activity_update_progress_handler.*
 import kotlin.concurrent.thread
 
-class UpdateProgressHandler: AppCompatActivity() {
+class UpdateProgressHandler : AppCompatActivity() {
 
     var diffHandler = object : Handler() {
 
@@ -16,14 +16,13 @@ class UpdateProgressHandler: AppCompatActivity() {
             super.handleMessage(msg)
 
 
-
         }
     }
 
 
-    var handler = Handler{
+    var handler = Handler {
 
-        tvProgress.text = it.arg1.toString()
+        tvProgress.text = it?.arg1?.toString()
         return@Handler true
     }
 
@@ -37,25 +36,22 @@ class UpdateProgressHandler: AppCompatActivity() {
         }
 
         btnBcast.setOnClickListener {
-
             updateUsingBCast()
         }
-
-
 
     }
 
     private fun updateUsingBCast() {
 
-        
+
     }
 
     private fun startUpdatingProgress() {
 
         var count = 0
-        var thread = Thread( Runnable {
+        var thread = Thread(Runnable {
 
-            while (count <10){
+            while (count < 10) {
                 count++
                 var message = Message()
                 message.arg1 = count

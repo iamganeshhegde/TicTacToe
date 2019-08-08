@@ -32,10 +32,52 @@ import kotlinx.android.synthetic.main.activity_datastructure_questions.*
             findScatteredPalindrome()
         }
 
+        btnFindMissingVal.setOnClickListener {
+            findMissingNumber()
+        }
 
 
 
     }
+
+     private fun findMissingNumber() {
+
+         //[-1,-1,6,1,9,3,2,-1,4,-1]  -- find missing number from 0-9
+         //ans - [-1,1,2,3,4,-1,6,-1,-1,9]
+
+
+         var inputArray = arrayOf(-1,-1,6,1,9,3,2,-1,4,-1)
+
+         var answerArray = arrayOfNulls<Int>(10)
+
+
+         var demoArray = IntArray(10){
+             i -> -1
+//             return@IntArray -1
+         }
+
+         for(i in 0 until answerArray.size){
+             answerArray[i] = -1
+         }
+
+
+         for(i in 0 until inputArray.size){
+
+             if(inputArray[i]> -1){
+
+                 answerArray[inputArray[i]] = inputArray[i]
+             }
+
+         }
+
+
+
+
+         for( i in 0 until answerArray.size){
+             Log.i(TAG," answer array  " +answerArray[i].toString()+" "+demoArray[i])
+         }
+
+     }
 
      private fun findScatteredPalindrome() {
 

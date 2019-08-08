@@ -94,6 +94,7 @@
         <activity android:name=".datastructure_questions.DataStructureQuestionsActivity"/>
         <activity android:name=".image_paint.ImagePaintActivity"/>
         <activity android:name=".update_progress_handler.UpdateProgressHandler"/>
+        <activity android:name=".tv_rv.TVRecyclerViewActivity"/>
 
         <service android:name=".servicesExample.SampleService"/>
         <service android:name=".servicesExample.SampleBoundService"/>
