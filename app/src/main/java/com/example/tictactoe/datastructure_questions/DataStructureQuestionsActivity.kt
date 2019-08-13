@@ -36,9 +36,52 @@ import kotlinx.android.synthetic.main.activity_datastructure_questions.*
             findMissingNumber()
         }
 
+        btnRotateArray.setOnClickListener {
+            setArrayRotation()
+        }
+
 
 
     }
+
+     private fun setArrayRotation() {
+
+//         [1,2,3,4,5,6] --> [3,4,5,6,1,2]
+
+
+         var nonReversedArray = IntArray(6){
+             i -> i
+         }
+
+
+         var left=0;
+         var right=nonReversedArray.size;
+         var numberOfRotation = 2
+         var changableRotation = numberOfRotation;
+
+
+
+         while (left < changableRotation){
+
+             nonReversedArray[left] = swapElements(nonReversedArray[numberOfRotation-1],{nonReversedArray[numberOfRotation-1] = nonReversedArray[left]}())
+//             nonReversedArray[left] = nonReversedArray[numberOfRotation-1]
+
+             left++
+             changableRotation--
+         }
+
+
+         for(i in 0 until nonReversedArray.size){
+             Log.i(TAG,"reversed array "+nonReversedArray[i].toString())
+         }
+
+     }
+
+     private fun swapElements(i: Int, any: Any): Int {
+
+         return i
+
+     }
 
      private fun findMissingNumber() {
 

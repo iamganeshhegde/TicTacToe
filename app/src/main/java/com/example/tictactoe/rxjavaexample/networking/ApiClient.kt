@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit
 
 class ApiClient {
 
+
     var BASE_URL = "https://api.apixu.com/v1/"
     val READ_TIMEOUT: Long = 1
     val CONNECT_TIMEOUT: Long = 1
